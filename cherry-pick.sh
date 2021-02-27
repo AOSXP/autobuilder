@@ -10,7 +10,7 @@ set -eu
 # ----------------------------------------------------------------------
 # Variables that can be overriden by caller
 # ----------------------------------------------------------------------
-SOURCE=${SOURCE:-~/android/source}
+SOURCE=${SOURCE:-/home/miustone/hdd/aosxp}
 
 _pick_pr() {
     local _remote=$1

@@ -5,9 +5,9 @@ set -e
 # URL: https://developers.google.com/android/images
 # Variables have to be adjusted accordingly
 # ----------------------------------------------------------------------
-APK_DIR=~/android/apk
-IMAGE_NAME=coral-qq1b.200205.002-factory-89d84384.zip
-DOWNLOAD_DIR=~/android/google-img
+APK_DIR=-/home/miustone/hdd/aosxpapk
+IMAGE_NAME=redfin-rq1a.210205.004-factory-c96c37ef.zip
+DOWNLOAD_DIR=-/home/miustone/hdd/aosxp/google-img
 # ----------------------------------------------------------------------
 
 IMAGE_FILE=$DOWNLOAD_DIR/$IMAGE_NAME

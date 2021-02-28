@@ -2,36 +2,36 @@
 set -eu
 
 # ----------------------------------------------------------------------
-# Variables that can be overriden by caller
+# Variables that can be overriden by Caller
 # ----------------------------------------------------------------------
 SOURCE=${SOURCE:-/home/miustone/hdd/aosxp}
 APK_DIR=${APK_DIR:-/home/miustone/hdd/aosxp/apk}
-LUNCH_CHOICE=
+LUNCH_CHOICE=${LUNCH_CHOICE:-aosp_j9210-user}
 # ----------------------------------------------------------------------
 
 _show_help() {
     echo "Usage:"
     echo "  $_shell_script [-b <manifest_branch> [-k|--keep-local]] [-h|--help]"
     echo ""
-    echo "A script to build AOSP/SODP 10 with linux kernel 4.14 for xperia devices"
+    echo "A Script to build AOSXP 11.0 with Linux Kernel 4.19 for modern Xperia Devices"
     echo ""
     echo "WARNING:"
-    echo "  The script is doing terrible things like:"
+    echo "  The Script is able to do terrible things like:"
     echo "  - deleting files"
     echo "  - git hard resets"
     echo "  - git checkouts"
-    echo "  therefore the script must not be used in a developers aosp tree with changed files"
-    echo "  and/or local commits. Both might get lost when running this script!"
+    echo "  therefore the Script must not be used in a Developers AOSP Tree with changed Files"
+    echo "  and/or local Commits. Both might get lost when running this Script!"
     echo ""
     echo "Options:"
-    echo "  -b <manifest_branch>    switches the repo to the specified manifest_branch, e.g. android-10.0.0_r21"
-    echo "  -k|--keep-local         keeps the branch for the local manifests repo when switching branches"
-    echo "  -h|--help               display this help"
-    echo "  -x|--exclude-gapps      excludes opengapps from the build and implicitly removes the opengapps"
-    echo "                          repos from the source tree"
+    echo "  -b <manifest_branch>    Switches the Repo to the specified manifest_branch, e.g. android-11.0.0_r29"
+    echo "  -k|--keep-local         Keeps the Branch for the local manifests Repo when switching Branches"
+    echo "  -h|--help               Displays this help"
+    echo "  -x|--exclude-gapps      Excludes opengapps from the Build and implicitly removes the OpenGApps"
+    echo "                          Repos from the source tree"
     echo ""
-    echo "Script variables:"
-    echo "  SOURCE          AOSP/SODP root folder"
+    echo "Script Variables:"
+    echo "  SOURCE          AOSXP root folder"
     echo "                  Default: ~/android/source"
     echo "  APK_DIR         currently not used"
     echo "                  Default: ~/android/apk"
@@ -116,8 +116,8 @@ _clean()  {
         device/sony/$_platform \
         device/sony/common \
         device/sony/sepolicy \
-        kernel/sony/msm-4.14/common-kernel \
-        kernel/sony/msm-4.14/kernel \
+        kernel/sony/msm-4.19/common-kernel \
+        kernel/sony/msm-4.19/kernel \
         vendor/opengapps/build \
         vendor/opengapps/sources/all \
         vendor/opengapps/sources/arm \
@@ -223,7 +223,7 @@ _make() {
         make installclean
     fi
 
-    pushd kernel/sony/msm-4.14/common-kernel
+    pushd kernel/sony/msm-4.19/common-kernel
         _platform_upper=`echo $_platform|tr '[:lower:]' '[:upper:]'`
         sed -i "s/PLATFORMS=.*/PLATFORMS=$_platform/1" build-kernels-clang.sh
         sed -i "s/$_platform_upper=.*/$_platform_upper=$_device/1" build-kernels-clang.sh

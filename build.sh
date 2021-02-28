@@ -6,7 +6,7 @@ set -eu
 # ----------------------------------------------------------------------
 SOURCE=${SOURCE:~/android}
 APK_DIR=${APK_DIR:~/android/aosxp/apk}
-LUNCH_CHOICE=${LUNCH_CHOICE:-aosp_j9210-user}
+LUNCH_CHOICE=
 # ----------------------------------------------------------------------
 
 _show_help() {

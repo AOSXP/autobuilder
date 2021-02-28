@@ -4,8 +4,8 @@ set -eu
 # ----------------------------------------------------------------------
 # Variables that can be overriden by Caller
 # ----------------------------------------------------------------------
-SOURCE=${SOURCE:-/home/miustone/hdd/aosxp}
-APK_DIR=${APK_DIR:-/home/miustone/hdd/aosxp/apk}
+SOURCE=${SOURCE:~/android}
+APK_DIR=${APK_DIR:~/android/aosxp/apk}
 LUNCH_CHOICE=${LUNCH_CHOICE:-aosp_j9210-user}
 # ----------------------------------------------------------------------
 
